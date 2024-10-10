@@ -1,11 +1,12 @@
-package com.wavemaker.collections;
+package com.wavemaker.collections.pojo;
 
 public class Student {
     private String studentId;
     private String firstName;
     private String lastName;
 
-    public Student(){}
+    public Student() {
+    }
 
     public Student(String studentId, String firstName, String lastName) {
         this.studentId = studentId;
@@ -36,7 +37,8 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-//
+
+    //
 //    @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
@@ -49,16 +51,17 @@ public class Student {
 //    public int hashCode() {
 //        return Objects.hash(studentId, firstName, lastName);
 //    }
-@Override
-public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
 
-    Student student = (Student) obj;
-    return (this.studentId != null  && this.studentId.equals(student.studentId))&&
-            (this.firstName != null && this.firstName.equals(student.firstName))&&
-            (this.lastName != null && this.lastName.equals(student.lastName));
-}
+        Student student = (Student) obj;
+        return (this.studentId != null && this.studentId.equals(student.studentId)) &&
+                (this.firstName != null && this.firstName.equals(student.firstName)) &&
+                (this.lastName != null && this.lastName.equals(student.lastName));
+    }
+
     @Override
     public int hashCode() {
         int result = studentId != null ? studentId.hashCode() : 0;
@@ -66,14 +69,11 @@ public boolean equals(Object obj) {
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         return result;
     }
+
     @Override
     public String toString() {
         return "Student ID: " + studentId + ", First Name: " + firstName + ", Last Name: " + lastName;
     }
-
-
-
-
 
 
 }

@@ -1,5 +1,4 @@
-package com.wavemaker.collections;
-
+package com.wavemaker.collections.customarraylist;
 import java.util.*;
 
 public class CustomList<E> implements List<E> {
@@ -31,8 +30,7 @@ public class CustomList<E> implements List<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new CustomIterator();
-    }
+        return new CustomIterator();}
 
     @Override
     public Object[] toArray() {
@@ -330,7 +328,8 @@ public class CustomList<E> implements List<E> {
         int cursor = 0;
         int lastReturnIndex = -1;
         int expectedModCount = modCount;
-        ;
+       ;
+
 
 
         public CustomIterator() {

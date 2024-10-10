@@ -1,7 +1,7 @@
 package com.wavemaker.collections;
+import com.wavemaker.collections.customarraylist.CustomList;
+import  com.wavemaker.collections.pojo.Student;
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

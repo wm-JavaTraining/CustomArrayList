@@ -1,10 +1,10 @@
-package com.wavemaker.collections;
+package com.wavemaker.collections.controller;
 
-import java.util.ArrayList;
+import com.wavemaker.collections.CustomList;
+import com.wavemaker.collections.pojo.Student;
+
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -37,16 +37,10 @@ public class Main {
             System.out.println(customStudentList.get(i));
         }
         System.out.println(customStudentList.contains(student1));
-        //CustomStudentList<Student> customStudentList = (CustomStudentList<Student>) new CustomStudentListImpl();
-        //customStudentList.addStudent(student1);
-        //customStudentList.addStudent(student2);
-        //customStudentList.addStudent(student3);
-        // System.out.println("print all students Detaiks");
-        //customStudentList.printAllStudents();
         System.out.println("check the student lis is empty or not " + customStudentList.isEmpty());
         System.out.println("total count of the students " + customStudentList.size());
         System.out.println("The index of the studnt2 " + customStudentList.indexOf(student2));
-        //System.out.println("remove successfully studen2 " + customStudentList.remove(student2));
+        System.out.println("remove successfully studen2 " + customStudentList.remove(student2));
         System.out.println("total count of the students " + customStudentList.size());
         try {
             System.out.println("Get student1: " + customStudentList.get(12));
@@ -65,7 +59,7 @@ public class Main {
             System.out.println("Error setting student: " + e.getMessage());
         }
         try {
-            //System.out.println("remove student by index " + customStudentList.remove(0));
+            System.out.println("remove student by index " + customStudentList.remove(0));
             System.out.println("get student at index 0 " + customStudentList.get(0));
 
         } catch (IndexOutOfBoundsException e) {
@@ -87,8 +81,6 @@ public class Main {
         }
         printStudentList(customStudentList);
         List<Student> customStudentList2 = new CustomList<>();
-        // customStudentList2.add(student1);
-        //customStudentList2.add(student2);
         Student student5 = new Student("5", "harshini", "mamulla");
         customStudentList2.add(student5);
         Student student6 = new Student("6", "lavanya", "gurijala");
@@ -98,12 +90,12 @@ public class Main {
         System.out.println(customStudentList.addAll(customStudentList2));
         printStudentList(customStudentList);
         printStudentList(customStudentList2);
-//        System.out.println(customStudentList.addAll(1,customStudentList2));
-//
-//        printStudentList(customStudentList);
+        System.out.println(customStudentList.addAll(1, customStudentList2));
 
-//        System.out.println(customStudentList.removeAll(customStudentList2));
-//        printStudentList(customStudentList);
+        printStudentList(customStudentList);
+
+        System.out.println(customStudentList.removeAll(customStudentList2));
+        printStudentList(customStudentList);
         System.out.println(customStudentList.retainAll(customStudentList2));
         printStudentList(customStudentList);
         System.out.println(customStudentList.toArray());
