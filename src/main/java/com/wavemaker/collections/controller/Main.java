@@ -1,6 +1,6 @@
 package com.wavemaker.collections.controller;
 
-import com.wavemaker.collections.CustomList;
+import com.wavemaker.collections.customarraylist.CustomArrayList;
 import com.wavemaker.collections.pojo.Student;
 
 import java.util.List;
@@ -23,13 +23,13 @@ public class Main {
         student3.setFirstName("Ashwini");
         student3.setLastName("Donthulapalli");
 
-        // Test equality and hashCode
-        System.out.println(student1.equals(student2)); // true
+
+        System.out.println(student1.equals(student2));
         System.out.println("student1 hashcode: " + student1.hashCode());
         System.out.println("student2 hashcode: " + student2.hashCode());
-        System.out.println(student1.equals(student3)); // false
+        System.out.println(student1.equals(student3));
         System.out.println("student3 hashcode: " + student3.hashCode());
-        List<Student> customStudentList = new CustomList<>();
+        List<Student> customStudentList = new CustomArrayList<>();
         customStudentList.add(student1);
         customStudentList.add(student2);
         customStudentList.add(student3);
@@ -70,7 +70,6 @@ public class Main {
         System.out.println("total count of the students " + customStudentList.size());
         try {
             System.out.println("add student by index ");
-            //customStudentList.add(1,student1);
             customStudentList.add(1, student3);
             System.out.println("get student at index 1 " + customStudentList.get(1));
 
@@ -80,7 +79,7 @@ public class Main {
             System.out.println("Error setting student: " + e.getMessage());
         }
         printStudentList(customStudentList);
-        List<Student> customStudentList2 = new CustomList<>();
+        List<Student> customStudentList2 = new CustomArrayList<>();
         Student student5 = new Student("5", "harshini", "mamulla");
         customStudentList2.add(student5);
         Student student6 = new Student("6", "lavanya", "gurijala");

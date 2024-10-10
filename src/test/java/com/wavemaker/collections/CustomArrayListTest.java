@@ -1,5 +1,5 @@
 package com.wavemaker.collections;
-import com.wavemaker.collections.customarraylist.CustomList;
+import com.wavemaker.collections.customarraylist.CustomArrayList;
 import  com.wavemaker.collections.pojo.Student;
 
 import org.junit.BeforeClass;
@@ -10,13 +10,13 @@ import java.util.ListIterator;
 
 import static org.junit.Assert.*;
 
-public class CustomListTest {
+public class CustomArrayListTest {
     private static List<Student> customStudentList = null;
     private static Student student1, student2, student3 = null;
 
     @BeforeClass
     public static void setUp() {
-        customStudentList = new CustomList<>();
+        customStudentList = new CustomArrayList<>();
         student1 = new Student();
         student1.setStudentId("1");
         student1.setFirstName("Roopa");
@@ -113,7 +113,7 @@ public class CustomListTest {
 
     @Test
     public void containsAllTest() {
-        List<Student> customStudentList2 = new CustomList<>();
+        List<Student> customStudentList2 = new CustomArrayList<>();
         customStudentList2.add(student1);
         customStudentList2.add(student2);
         System.out.println(customStudentList.containsAll(customStudentList2));
@@ -123,7 +123,7 @@ public class CustomListTest {
 
     @Test
     public void addAllTest() {
-        List<Student> customStudentList2 = new CustomList<>();
+        List<Student> customStudentList2 = new CustomArrayList<>();
         Student student6 = new Student("6", "seetha", "mamidi");
         Student student7 = new Student("7", "latha", "aenugu");
         customStudentList2.add(student6);
@@ -134,7 +134,7 @@ public class CustomListTest {
 
     @Test
     public void addAllAtIndexTest() {
-        List<Student> customStudentList2 = new CustomList<>();
+        List<Student> customStudentList2 = new CustomArrayList<>();
         Student student6 = new Student("6", "seetha", "mamidi");
         Student student7 = new Student("7", "latha", "aenugu");
         customStudentList2.add(student6);
@@ -146,7 +146,7 @@ public class CustomListTest {
 
     @Test
     public void removeAllTest() {
-        List<Student> customStudentList2 = new CustomList<>();
+        List<Student> customStudentList2 = new CustomArrayList<>();
         customStudentList2.add(student1);
         customStudentList2.add(student2);
         System.out.println(customStudentList.removeAll(customStudentList2));
@@ -156,7 +156,7 @@ public class CustomListTest {
 
     @Test
     public void retainAllTest() {
-        List<Student> customStudentList2 = new CustomList<>();
+        List<Student> customStudentList2 = new CustomArrayList<>();
         customStudentList2.add(student1);
         customStudentList2.add(student2);
         System.out.println(customStudentList.retainAll(customStudentList2));

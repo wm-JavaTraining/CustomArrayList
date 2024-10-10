@@ -1,14 +1,14 @@
 package com.wavemaker.collections.customarraylist;
 import java.util.*;
 
-public class CustomList<E> implements List<E> {
+public class CustomArrayList<E> implements List<E> {
     private int size;
     private int modCount = 0;
     private static final int DEFAULT_CAPACITY = 3;
     transient Object[] elementData;
 
 
-    public CustomList() {
+    public CustomArrayList() {
         size = 0;
         elementData = new Object[DEFAULT_CAPACITY];
     }
@@ -172,7 +172,7 @@ public class CustomList<E> implements List<E> {
             return false;
         }
 
-        List<Object> toRemove = new CustomList<>();
+        List<Object> toRemove = new CustomArrayList<>();
 
         for (int j = 0; j < size; j++) {
             boolean isFound = false;
@@ -280,7 +280,7 @@ public class CustomList<E> implements List<E> {
     public List<E> subList(int fromIndex, int toIndex) {
 
         subListRangeCheck(fromIndex, toIndex, size);
-        List<E> subListObject = new CustomList<>();
+        List<E> subListObject = new CustomArrayList<>();
         for (int i = fromIndex; i < toIndex; i++) {
             subListObject.add((E) elementData[i]);
         }
@@ -347,7 +347,7 @@ public class CustomList<E> implements List<E> {
             int cursorIndex = cursor;
             if (cursorIndex >= size)
                 throw new NoSuchElementException();
-            Object[] elementData = CustomList.this.elementData;
+            Object[] elementData = CustomArrayList.this.elementData;
             if (cursorIndex >= elementData.length)
                 throw new ConcurrentModificationException();
             cursor = cursorIndex + 1;
@@ -377,7 +377,7 @@ public class CustomList<E> implements List<E> {
             int prevoiusIndex = cursor - 1;
             if (prevoiusIndex < 0)
                 throw new NoSuchElementException();
-            Object[] elementData = CustomList.this.elementData;
+            Object[] elementData = CustomArrayList.this.elementData;
             if (prevoiusIndex >= elementData.length)
                 throw new ConcurrentModificationException();
             cursor = prevoiusIndex;
@@ -403,7 +403,7 @@ public class CustomList<E> implements List<E> {
                 checkForComodification();
 
                 try {
-                    CustomList.this.remove(lastReturnIndex);
+                    CustomArrayList.this.remove(lastReturnIndex);
                     cursor = lastReturnIndex;
                     lastReturnIndex = -1;
                     expectedModCount = modCount;
@@ -422,7 +422,7 @@ public class CustomList<E> implements List<E> {
             checkForComodification();
 
             try {
-                CustomList.this.set(lastReturnIndex, e);
+                CustomArrayList.this.set(lastReturnIndex, e);
             } catch (IndexOutOfBoundsException ex) {
                 throw new ConcurrentModificationException();
             }
@@ -436,7 +436,7 @@ public class CustomList<E> implements List<E> {
 
             try {
                 int i = cursor;
-                CustomList.this.add(i, e);
+                CustomArrayList.this.add(i, e);
                 cursor = i + 1;
                 lastReturnIndex = -1;
                 expectedModCount = modCount;
